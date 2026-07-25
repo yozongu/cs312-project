@@ -5,7 +5,7 @@
 <head>
     <link rel="stylesheet" href="std.css">
     <meta charset="UTF-8">
-    <title>About us</title>
+    <title>Events</title>
 </head>
 
 <?php
@@ -17,67 +17,46 @@ include 'menu.php';
     <b>Upcoming events</b>
 </div>
 
-<div class="events">
-    <table border="1">
-        <li>
-            <tr>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Event</th>
-            </tr>
-            <tr>
-                <td>15 March 2026</td>
-                <td>11:00 am</td>
-                <td>Group meeting for upcoming club elections</td>
-            </tr>
-            <tr>
-                <td>17 March 2026</td>
-                <td>10:00 am</td>
-                <td>Discussion: Resources available to club member</td>
-            </tr>
-            <tr>
-                <td>19 March 2026</td>
-                <td>10:30 am</td>
-                <td>Giveaway: Free puppies</td>
-            </tr>
-            <tr>
-                <td>23 March 2026</td>
-                <td>12:00 pm</td>
-                <td>Discussion: Local entrepeneurship opportunities</td>
-            </tr>
-            <tr>
-                <td>25 March 2026</td>
-                <td>10:00 am</td>
-                <td>Group meeting: Plans for next club election</td>
-            </tr>
-            <tr>
-                <td>27 March 2026</td>
-                <td>9:00 pm</td>
-                <td>Discussion: Open forum for ideas</td>
-            </tr>
-            <tr>
-                <td>30 March 2026</td>
-                <td>11:00 pm</td>
-                <td>Club election day</td>
-            </tr>
-            <tr>
-                <td>01 April 2026</td>
-                <td>12:00 pm</td>
-                <td>Discussion: Events for April</td>
-            </tr>
-            <tr>
-                <td>03 April 2026</td>
-                <td>10:00 am</td>
-                <td>Volunteering event at downtown Norfolk</td>
-            </tr>
-            <tr>
-                <td>06 April 2026</td>
-                <td>10:00 am</td>
-                <td>Discussion: What makes a good entrepeneur?</td>
-            </tr>
-        </li>
-    </table>
-</div>
+<br><br>
+<button class="new_event_button" onclick="window.location.href='new_event.php'">New Event</button>
+
+<?php
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+
+$db = new SQLite3('user.db');
+
+$result = $db->query("SELECT event_name, event_sponsor, event_description, event_date FROM events ORDER BY event_date ASC");
+
+echo "<table class='event_table' border='1' cellpadding='5' cellspacing='0'>";
+echo "<tr>
+        <th>Event</th>
+        <th>Sponsor</th>
+        <th>Description</th>
+        <th>Date</th>
+      </tr>";
+
+while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+    echo "<tr>";
+    echo "<td>" . $row['event_name'] . "</td>";
+    echo "<td>" . $row['event_sponsor'] . "</td>";
+    echo "<td>" . $row['event_description'] . "</td>";
+    echo "<td>" . $row['event_date'] . "</td>";
+    echo "</tr>";
+}
+
+echo "</table><br><br>";
+
+if (!$result) {
+    echo "Query failed: " . $db->lastErrorMsg();
+}
+$row = $result->fetchArray(SQLITE3_ASSOC);
+if (!$row) {
+    echo "No data found.";
+}
+
+?>
 
 <?php
 include 'footer.php';

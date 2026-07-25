@@ -7,4 +7,7 @@
     <a href="events.php">📅 Events</a>
     <a href="gallery.php">📸 Gallery</a>
     <a href="resources.php">📚 Resources</a>
+    <a href="registration.php">✍🏻 Register</a>
+    <a href="login.php">👤 Login</a>
+    <a href="logout_action.php">❌ Log out<a/>
 </nav>

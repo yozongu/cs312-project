@@ -9,8 +9,13 @@
 </head>
 
 <?php
+session_start();
 include 'header.php';
 include 'menu.php';
+if (isset($_SESSION['message'])) { 
+	echo "<h1 class='session_message'>" . $_SESSION['message'] . "</h1>";
+	unset($_SESSION['message']);
+}
 ?>
 
 <div class="main">

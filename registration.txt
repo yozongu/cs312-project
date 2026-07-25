@@ -1,0 +1,6 @@
+jaja,jaja@gmail.com,"jaja binks",12,2026-04-01,male,true
+jaja1,jaja@gmail.com,"jaja binks2",12,2026-04-01,male,true
+yoyoyo,yoyo@gmail.com,yoyo2,12,2026-03-29,female,true
+jaja,lala1@gmail.com,"la la",14,2023-06-04,male,true
+ajaj,asdas1@gmail.com,jaja,12,2026-04-21,male,
+narif,narif@odu.edu,Nasreen,34,1991-08-09,female,true

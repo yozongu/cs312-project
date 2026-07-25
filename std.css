@@ -100,11 +100,18 @@ footer .source {
     text-align: center;
 }
 
-.events * {
-    font-size: 25px;
-    align-items: center;
-    margin: 25px auto;
-    margin-top: 10px;
+.event_table {
+    width: 80%;
+    margin: 10px auto;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.event_table th, .event_table td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .events-main {
@@ -144,3 +151,33 @@ footer .source {
 .resource-body a {
     font-size: 20px;
 }
+
+label {
+    display: inline-block;
+    width: 120px;
+}
+
+.news_letter label {
+    display: inline;
+    width: 50px;
+}
+
+.submit input {
+    margin-left: 100px;
+}
+
+.new_event_button {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+}
+
+.session_message {
+    color: red;
+    text-align: center;
+}
+
+
+
